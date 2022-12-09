@@ -1,0 +1,47 @@
+package tiposprimitivos;
+
+import java.util.Scanner;
+public class PI_Cliente {
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        
+        String user = "0";
+        String password = "0";
+        //int f = 2;
+        
+        System.out.println("===========================");
+        System.out.println("      MENU DE ENTRADA      ");
+        System.out.println("===========================");
+        System.out.println("[1] - Logar;               ");
+        System.out.println("[2] - Criar um cadastro;   ");
+        System.out.print("Resposta: ");
+        int opcao = read.nextInt();
+        
+        while (opcao < 1 || opcao > 2){
+            System.out.println("\nRESPOSTA INVÁLIDA...\n");
+            System.out.println("===========================");
+            System.out.println("      MENU DE ENTRADA      ");
+            System.out.println("===========================");
+            System.out.println("[1] - Logar;               ");
+            System.out.println("[2] - Criar um cadastro;   ");
+            System.out.print("Resposta: ");
+            opcao = read.nextInt();
+        }
+        
+        if (opcao == 1) {
+            System.out.print("Nome do usuário: ");
+            String usuario = read.next();
+            System.out.print("Senha: ");
+            String senha = read.next();
+            
+            while ( !user.equals(usuario) || !password.equals(senha)){
+                System.out.println("\nRESPOSTA INVÁLIDA...\n");
+                System.out.print("Nome do usuário: ");
+                usuario = read.next();
+                System.out.print("Senha: ");
+                senha = read.next();
+            }  
+            
+        } else {
+            System.out.println("FARÁS ALGO MAIS TARDE <3");
+        }
