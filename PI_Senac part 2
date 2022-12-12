@@ -1,0 +1,81 @@
+package tiposprimitivos;
+
+import java.util.Scanner;
+public class PI_Cliente_2 {
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        
+        String user = "0";
+        String password = "0";
+        String usuario = "1";
+        String senha = "1";
+        int f = 2;
+        String opcao = "3";
+        
+        
+        do{
+            while (!opcao.equals("1") && !opcao.equals("2")){
+                System.out.println("===========================");
+                System.out.println("      MENU DE ENTRADA      ");
+                System.out.println("===========================");
+                System.out.println("[1] - Logar;               ");
+                System.out.println("[2] - Criar um cadastro;   ");
+                System.out.print("Resposta: ");
+                opcao = read.next();
+            }
+        
+            if (opcao.equals("1")) {
+                System.out.print("Nome do usuário: ");
+                usuario = read.next();
+                System.out.print("Senha: ");
+                senha = read.next();
+                while(!user.equals(usuario) && !password.equals(senha)){
+                    System.out.print("Nome do usuário: ");
+                    usuario = read.next();
+                    System.out.print("Senha: ");
+                    senha = read.next();
+                    System.out.println("Deseja tentar novamente?");
+                    System.out.println("[S] - Sim");
+                    System.out.println("[N] - Não");
+                    System.out.print(" Resposta ===> ");
+                    opcao = read.next();
+                    if(user.equals(usuario) && password.equals(senha)){
+                        break;
+                    }
+                    if(opcao.equals("N")){
+                        break;
+                    }
+                }
+            }
+           
+            if (opcao.equals("2")){
+                System.out.print("Crie um nome de usuário: ");
+                user = read.next();
+                System.out.print("Crie uma senha: ");
+                password = read.next();
+                System.out.println("Conta criada com sucesso! Deseja ser redirecionado para a página de login ou para o menu?");
+                System.out.println("[1] - Login");
+                System.out.println("[2] - Menu");
+                System.out.print(" Resposta ===> ");
+                opcao = read.next();
+                if(opcao.equals("2")){
+                    opcao = "N";
+                }
+                if(!opcao.equals("1") && !opcao.equals("2")){
+                    System.out.println("Você será redirecionado para o menu por ter digitado uma opção inválida!");
+                    opcao = "N";
+                }
+            }
+            
+            if(user.equals(usuario) && password.equals(senha)){
+                f = 3;
+                break;
+            }
+            
+        }while(f == 2);
+            
+        System.out.println("Teste");
+        
+        
+    }
+}
